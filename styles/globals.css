@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-hidden !important;
+}
+
+.link {
+  @apply bg-white text-hover p-2 text-lg rounded-lg cursor-pointer w-[45px] h-[45px] text-center relative !important;
+}
+
+.link.active {
+  @apply text-main after:h-1 after:w-5 after:bg-main after:m-auto after:block after:absolute after:bottom-1 after:left-0 after:right-0 after:rounded !important;
+}
+
+.call-icon {
+  @apply bg-main p-3 m-2 text-white rounded-full cursor-pointer items-center text-center;
+}
+
+.message-icon {
+  @apply text-xl w-[45px] h-[45px] justify-center flex call-icon !important;
+}
