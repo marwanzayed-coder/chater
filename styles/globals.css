@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply overflow-hidden !important;
+  @apply overflow-x-hidden !important;
+}
+
+#__next {
+  @apply flex overflow-x-hidden;
 }
 
 .link {
@@ -19,5 +23,5 @@ body {
 }
 
 .message-icon {
-  @apply text-xl w-[45px] h-[45px] justify-center flex call-icon !important;
+  @apply text-lg w-[35px] h-[35px] justify-center flex call-icon !important;
 }

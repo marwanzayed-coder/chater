@@ -4,11 +4,11 @@ import Slider from "../components/Slider";
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  let [show, setShow] = useState(true);
+  let [show, setShow] = useState(false);
   return (
     <>
       <Slider show={show} setShow={setShow} />
-      <Component {...pageProps} />
+      <Component {...(pageProps = { show, setShow })} />
     </>
   );
 }

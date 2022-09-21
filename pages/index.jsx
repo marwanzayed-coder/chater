@@ -2,24 +2,27 @@ import Head from "next/head";
 import Link from "next/link";
 import User from "../components/User";
 
-const Home = () => {
-  let show = true;
+const Home = (props) => {
+  let { show, setShow } = props;
   return (
     <div
-      className={`inline-block transition-all w-full md:w-[calc(100%-230px)] m-auto absolute left-0 md:left-[77px] right-0 ${
+      className={`inline-block transition-all w-full md:w-[calc(100%-230px)] m-auto ${
         show ? "translate-x-[77px] md:translate-x-0" : ""
       }`}
       dir="rtl"
     >
-      <div className="container font-cairo home bg-background p-7 min-h-[100vh]">
+      <div className="container font-cairo home bg-background p-7 min-h-[100vh] flex flex-col justify-between">
         <Head>
           <title>Chater</title>
         </Head>
         <header>
           <div className="flex justify-between items-center relative after:w-40 md:after:w-[20rem] after:h-1 after:bg-second-background after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:rounded after:m-auto">
-            <User />
+            <User show={show} setShow={setShow} />
             <div>
-              <i className="fas fa-angle-left text-main font-bold text-2xl cursor-pointer" />
+              <i
+                className="fas fa-angle-left text-main font-bold text-2xl cursor-pointer"
+                onClick={() => setShow(!show)}
+              />
             </div>
           </div>
           <div className="call md:pr-20">
@@ -31,7 +34,7 @@ const Home = () => {
             </Link>
           </div>
         </header>
-        <section className="message flex justify-center items-center absolute bottom-5 right-0 left-0">
+        <section className="message flex justify-center items-center">
           <div className="relative cursor-pointer">
             <form method="POST">
               <input
@@ -55,13 +58,16 @@ const Home = () => {
             </form>
           </div>
           <div>
-            <form className="inline-block" method="POST">
+            <form className="inline-block relative" method="POST">
               <input
                 type="text"
                 placeholder="أكتب رسالتك"
                 name="msg"
                 className="bg-second-background p-2 pr-5 pl-5 border-none outline-none md:w-[500px] rounded-lg placeholder:text-[#555]"
               />
+              <button type="submit">
+                <i className="fas fa-telephone" />
+              </button>
             </form>
           </div>
           {/* <div>

@@ -4,7 +4,6 @@ import Logo from "../assets/images/logo.jpg";
 import { useRouter } from "next/router";
 
 const User = (props) => {
-  console.log(props);
   let { show, setShow } = props;
   let url = useRouter().route;
   return (

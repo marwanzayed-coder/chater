@@ -3,11 +3,11 @@ import Image from "next/image";
 import User from "../components/User";
 import Logo from "../assets/images/logo.jpg";
 
-export default function Search() {
-  let show = true;
+export default function Search(props) {
+  let { show, setShow } = props;
   return (
     <div
-      className={`inline-block transition-all w-full md:w-[calc(100%-230px)] m-auto absolute left-0 md:left-[77px] right-0 ${
+      className={`inline-block transition-all w-full md:w-[calc(100%-230px)] m-auto ${
         show ? "translate-x-[77px] md:translate-x-0" : ""
       }`}
       dir="rtl"
@@ -17,7 +17,7 @@ export default function Search() {
           <title>Chater - Search</title>
         </Head>
         <header>
-          <User />
+          <User show={show} setShow={setShow} />
         </header>
         <section className="m-auto p-5 md:pr-20 md:pl-20 relative after:w-[20rem] after:h-1 after:bg-main after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:rounded after:m-auto">
           <h2 className="text-main font-bold text-xl mt-3 mb-3">
