@@ -6,7 +6,7 @@ const Slider = (props) => {
   let { show, setShow } = props;
   return (
     <div
-      className={`slider transition-all h-[100vh] bg-main text-white p-4 rounded-r-3xl inline-flex justify-center items-center fixed top-0 left-0 md:translate-x-0 ${
+      className={`slider transition-all h-[100vh]  fixed md:relative bg-main text-white p-4 rounded-r-3xl flex justify-center items-center top-0 left-0 md:translate-x-0 ${
         show ? "translate-x-0" : "translate-x-[-77px]"
       }`}
     >
@@ -49,7 +49,7 @@ const Slider = (props) => {
             title="Setting"
           />
         </Link>
-        <Link href="/archive">
+        {/* <Link href="/archive">
           <i
             className={
               url !== "/archive"
@@ -66,7 +66,7 @@ const Slider = (props) => {
             }
             title="Ban"
           />
-        </Link>
+        </Link> */}
         <Link href="/notification">
           <i
             className={

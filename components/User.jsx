@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 const User = (props) => {
   let { show, setShow } = props;
   let url = useRouter().route;
+  console.log(url);
   return (
     <div className="user flex justify-between items-center p-1 pb-7 md:p-7">
       <div className="flex justify-between items-center">
@@ -25,16 +26,6 @@ const User = (props) => {
           </span>
         </div>
       </div>
-      {url !== "/" ? (
-        <div>
-          <i
-            className="fas fa-bars text-main font-bold text-2xl cursor-pointer"
-            onClick={() => setShow(!show)}
-          />
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 };

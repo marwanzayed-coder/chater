@@ -5,6 +5,35 @@
 body {
   @apply overflow-x-hidden !important;
 }
+.toggle-checkbox {
+  @apply appearance-none;
+}
+.toggle-switch {
+  @apply bg-[#ccc] w-[78px] h-8 rounded-2xl relative cursor-pointer transition;
+}
+.toggle-switch::before {
+  content: "";
+  @apply bg-main w-6 h-6 rounded-full absolute top-1 left-1 transition;
+}
+.toggle-checkbox:checked + .toggle-switch {
+  @apply bg-hover;
+}
+.toggle-checkbox:checked + .toggle-switch::before {
+  @apply text-main left-[50px];
+}
+::-webkit-scrollbar {
+  width: 1px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-main;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-hover;
+}
 
 #__next {
   @apply flex overflow-x-hidden;
@@ -22,6 +51,75 @@ body {
   @apply bg-main p-3 m-2 text-white rounded-full cursor-pointer items-center text-center;
 }
 
+.cam-icon {
+  @apply bg-hover p-2 text-white rounded-full cursor-pointer items-center text-center absolute -right-1 -bottom-1;
+}
+
 .message-icon {
   @apply text-lg w-[35px] h-[35px] justify-center flex call-icon !important;
+}
+
+.msg-me {
+  @apply flex gap-2 items-center my-3;
+}
+
+.msg-you {
+  @apply flex gap-2 items-center my-3;
+  direction: ltr;
+}
+.msg-me img:not(.msg-me div img),
+.msg-you img:not(.msg-you div img) {
+  @apply rounded-full;
+}
+.msg-me div img,
+.msg-you div img {
+  @apply block;
+}
+.msg-me div,
+.msg-you div {
+  @apply bg-second-background py-1 px-4 rounded-lg;
+}
+.msg-me div span,
+.msg-you div span {
+  @apply text-xs text-gray-500 block;
+  width: 100%;
+  height: 100%;
+}
+.msg-me.call-volume a,
+.msg-you.call-volume a {
+  @apply block text-sm my-1 text-gray-600;
+  direction: rtl;
+}
+.msg-me.call-volume i,
+.msg-you.call-volume i {
+  @apply rotate-[-45deg] mx-1 bg-main p-2 rounded-full text-white;
+}
+.msg-me.call-volume h3,
+.msg-you.call-volume h3 {
+  direction: rtl;
+}
+.msg-me.call-video a,
+.msg-you.call-video a {
+  @apply block text-sm my-1 text-gray-600;
+  direction: rtl;
+}
+.msg-me.call-video i,
+.msg-you.call-video i {
+  @apply mx-1 bg-main p-2 rounded-full text-white;
+}
+.msg-me.call-video h3,
+.msg-you.call-video h3 {
+  direction: rtl;
+}
+.msg-me.file a,
+.msg-you.file a {
+  @apply bg-background p-1 rounded-md block;
+  direction: rtl;
+}
+
+.friends > span {
+  margin-left: 5px !important;
+  display: block !important;
+  min-width: 55px;
+  min-height: 55px;
 }
